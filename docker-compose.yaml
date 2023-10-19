@@ -1,0 +1,47 @@
+version: '3'
+
+services:
+  db:
+    image: postgres:13 # You can specify the PostgreSQL version
+    environment:
+      POSTGRES_DB: mydatabase
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+    ports:
+      - "5432:5432" # Expose PostgreSQL port
+      
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+    environment:
+      DJANGO_SETTINGS_MODULE: "ecom.settings"
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+   
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
+
+  mailhog:
+    image: mailhog/mailhog
+    container_name: 'mailhog'
+    ports:
+      - "1025:1025"
+      - "8025:8025" # For web
+
+  celery:
+    restart: always
+    build:
+      context: .
+    command: celery -A ecom worker -l info
+    depends_on:
+      - db
+      - redis
+      - web
+
+    

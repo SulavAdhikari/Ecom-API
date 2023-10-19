@@ -1,0 +1,10 @@
+pyjwt
+django
+djangorestframework
+psycopg2-binary
+django-redis
+celery[redis]
+flower
+django-crontab
+Pillow
+stripe
