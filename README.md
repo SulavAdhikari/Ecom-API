@@ -15,7 +15,7 @@ The project is seperated into apps which are named after the features written in
 By using the Django's default preffered app structure, this code has been scaleable, and readable.
 Inside User app there is managers.py file, authentication.py file and a custom user in the models. This helps new-comers in django understand the basic of authentication in django.
 
-<h1>APIs User</h1>
+
 ## API Endpoints
 
 | Name           | Endpoint               | Fields                    | Methods |
@@ -29,3 +29,46 @@ Inside User app there is managers.py file, authentication.py file and a custom u
 for Auth test you need to use the JWT returned after login.
 put it in a Header AUTH : JWT YOUROWNJWTKEY
 
+
+## Seller Dashboard API Endpoints
+
+| Name           | Endpoint                                  | Methods |
+|----------------|-------------------------------------------|---------|
+| Product Upload | `/seller_dashboard/upload/`               | POST    |
+| Product Edit   | `/seller_dashboard/edit/<slug:slug>/`     | PUT, PATCH   |
+| Product Delete | `/seller_dashboard/delete/<slug:slug>/`   | DELETE  |
+| Make Unavailable | `/seller_dashboard/make-unavailable/<slug:slug>/` | POST |
+| Make Available | `/seller_dashboard/make-available/<slug:slug>/` | POST   |
+| Product List   | `/seller_dashboard/list/`                 | GET     |
+| Seller Create  | `/seller_dashboard/create/`               | POST    |
+| Seller Update  | `/seller_dashboard/<int:id>/`             | PUT   |
+| Seller Delete  | `/seller_dashboard/<int:id>/delete/`      | DELETE  |
+
+All of the above endpoint requires Authentication
+
+## Products API Endpoints
+
+| Name                          | Endpoint                                   | Methods |
+|-------------------------------|--------------------------------------------|---------|
+| Available Products            | `/products/available/`                     | GET     |
+| User's Available Products     | `/products/user/<str:username>/`           | GET     |
+| Products in Price Range       | `/products/price-range/`                   | GET     |
+| Search Products               | `/products/search/`                        | GET     |
+| Product by Slug               | `/products/<slug:slug>/`                   | GET     |
+| Products in Date Range        | `/products/date-range/`                    | GET     |
+
+
+## Shopping and Payment API Endpoints
+
+| Name               | Endpoint               | Methods |
+|--------------------|------------------------|---------|
+| Add to Cart        | `/cart/add/`           | POST    |
+| Checkout           | `/checkout/`           | POST |
+| Payment            | `/payment/`            | POST    |
+
+## Reviews API Endpoints
+
+| Name                       | Endpoint                             | Methods |
+|----------------------------|--------------------------------------|---------|
+| Create Review              | `/create/`                           | POST    |
+| Product Reviews            | `/product/<int:product_id>/reviews/` | GET     |
