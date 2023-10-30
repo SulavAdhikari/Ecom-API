@@ -19,13 +19,9 @@ Inside User app there is managers.py file, authentication.py file and a custom u
 |Name          | endpoint       | fields                    | methods |
 |--------------|----------------|---------------------------|---------|
 |User register | /api/register/ | username, email, password | POST    |
-|--------------|----------------|---------------------------|---------|
 |User login    | /api/login/    | username, password        | POST    |
-|--------------|----------------|---------------------------|---------|
 |forgot pass   | /api/forgot-password/| email | POST  |
-|--------------|----------------------|-------|-------|
 | Auth test    | /api/isauth/         | None  | GET   |
-|--------------|----------------------|-------|-------|
 
 for Auth test you need to use the JWT returned after login.
 put it in a Header AUTH : JWT YOUROWNJWTKEY
