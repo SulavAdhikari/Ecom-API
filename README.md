@@ -16,12 +16,15 @@ By using the Django's default preffered app structure, this code has been scalea
 Inside User app there is managers.py file, authentication.py file and a custom user in the models. This helps new-comers in django understand the basic of authentication in django.
 
 <h1>APIs User</h1>
-|Name          | endpoint       | fields                    | methods |
-|:---|:---:|:---:|---:|
-|User register | /api/register/ | username, email, password | POST    |
-|User login    | /api/login/    | username, password        | POST    |
-|forgot pass   | /api/forgot-password/| email | POST  |
-| Auth test    | /api/isauth/         | None  | GET   |
+## API Endpoints
+
+| Name           | Endpoint               | Fields                    | Methods |
+|----------------|------------------------|---------------------------|---------|
+| User register  | `/api/register/`       | username, email, password | POST    |
+| User login     | `/api/login/`          | username, password        | POST    |
+| Forgot pass    | `/api/forgot-password/`| email                     | POST    |
+| Auth test      | `/api/isauth/`         | None                      | GET     |
+
 
 for Auth test you need to use the JWT returned after login.
 put it in a Header AUTH : JWT YOUROWNJWTKEY
