@@ -14,6 +14,17 @@ sudo docker-compose up
 The project is seperated into apps which are named after the features written inside them.
 By using the Django's default preffered app structure, this code has been scaleable, and readable.
 Inside User app there is managers.py file, authentication.py file and a custom user in the models. This helps new-comers in django understand the basic of authentication in django.
+The uploaded files are stored in media folder, with well managed file structure being
+
+/media/uploads/product/product:slug/image.jpg
+
+while using this we can now add a new folder for User profile, without storing all files in oone folder 
+
+A thing to Note is that this will run properly only on debug mode,
+We can either use a workaround
+ https://github.com/SulavAdhikari/DjangoMediaDisplayFixConcept
+ or a cloud storage server
+
 
 
 ## API Endpoints
