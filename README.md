@@ -17,7 +17,6 @@ Inside User app there is managers.py file, authentication.py file and a custom u
 
 <h1>APIs User</h1>
 |Name          | endpoint       | fields                    | methods |
-|--------------|----------------|---------------------------|---------|
 |User register | /api/register/ | username, email, password | POST    |
 |User login    | /api/login/    | username, password        | POST    |
 |forgot pass   | /api/forgot-password/| email | POST  |
